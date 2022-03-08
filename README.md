@@ -1,2 +1,17 @@
 # about-me
-lab for class 2
+
+## Lab 02
+
+### Author: Elizabeth
+
+### Links and Resources
+
+### Reflections
+
+## Lab 03
+
+### Links and Resources
+
+### Reflections
+
+## Lab 04
