@@ -48,3 +48,40 @@ if(answerFive === 'y' || answerFive === 'yes'){
   alert(`That\'s fair. I won't take it personally, ${userName}.`);
   //console.log(`${userName} is incorrect; I am super cool, brilliant and amazing.`);
 }
+
+let answerSix = 5;
+let maxRetry = 3;
+for (let i = 0; i <= maxRetry; i++){
+  let userGuessSix = prompt (`Ok, ${userName}, new question. How many states have I lived in? I'll give you 4 guesses.`);
+  if (parseInt (userGuessSix) === answerSix){
+    alert(`That's right, ${userName}! I've lived in 5 states. Good job, you.`);
+    //console.log('user was correct');
+    break;
+  } else if(userGuessSix > answerSix){
+    alert(`Not that many! You have ${maxRetry - i} tries left.`);
+    //console.log('user was incorrect.');
+  } else if(userGuessSix < answerSix){
+    alert(`More than that! You have ${maxRetry - i} tries left.`);
+    //console.log('user was incorrect.');
+  }
+  if(i === maxRetry){
+    alert(`Oof, sorry ${userName}, you're bad at guessing. The answer is 5 states.`);
+  }
+}
+
+let answerSeven = ['mangoes', 'pineapples', 'blueberries', 'cherries'];
+maxRetry = 5;
+for (let i = 0; i <= maxRetry; i++){
+  let userGuessSeven = prompt(`Now, this next question has multiple correct answers, so you should get this, ${userName}! What is one of my favorite fruits? Make sure your each guess is in its plural form.`);
+if(answerSeven[i] === userGuessSeven){
+  alert('Correct!');
+} else if(userGuessSeven !== answerSeven[i]){
+  alert('Nope!');
+  }
+}
+
+// while maxRetry < 4
+// for loop
+// if answer7[i] === userGuess7 -- then return Correct! 
+// else return Wrong!
+// // need to keep track of maxretry, so need to decrament maxretry. maxretry--
