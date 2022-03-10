@@ -49,8 +49,27 @@ if(answerFive === 'y' || answerFive === 'yes'){
   //console.log(`${userName} is incorrect; I am super cool, brilliant and amazing.`);
 }
 
+//UESTION 6 LOOP
+
+// let answerSix = 5;
+// let attempts = 4;
+
+// while (attempts) {
+//   let userGuess = prompt(`Ok, ${userName}, next question. How many states have I lived in? I'll give you 4 guesses.`);
+//   if (userGuess > answerSix) {
+//     alert('Nope, not that many.');
+//   } else if (userGuess < answerSix) {
+//     alert('Nope, more than that.');
+//     break;
+//   }
+//   attempts--;
+//   if (attempts === 0) {
+//     alert(`Oof, not great at guessing, ${userName}. The answer is ${answerSix}.`);
+//   }
+// }
+
 let answerSix = 5;
-let maxRetry = 3;
+let maxRetry = 4;
 for (let i = 0; i <= maxRetry; i++){
   let userGuessSix = prompt (`Ok, ${userName}, new question. How many states have I lived in? I'll give you 4 guesses.`);
   if (parseInt (userGuessSix) === answerSix){
@@ -65,23 +84,30 @@ for (let i = 0; i <= maxRetry; i++){
     //console.log('user was incorrect.');
   }
   if(i === maxRetry){
-    alert(`Oof, sorry ${userName}, you're bad at guessing. The answer is 5 states.`);
+    alert(`Oof, sorry ${userName}, you're bad at guessing. The answer is 5.`);
   }
 }
 
-let answerSeven = ['mangoes', 'pineapples', 'blueberries', 'cherries'];
-maxRetry = 5;
-for (let i = 0; i <= maxRetry; i++){
-  let userGuessSeven = prompt(`Now, this next question has multiple correct answers, so you should get this, ${userName}! What is one of my favorite fruits? Make sure your each guess is in its plural form.`);
-if(answerSeven[i] === userGuessSeven){
-  alert('Correct!');
-} else if(userGuessSeven !== answerSeven[i]){
-  alert('Nope!');
+//QUESTION 7 LOOP
+
+let myFavFruit = ['mangoes', 'mango', 'pineapple', 'pineapples', 'blueberries', 'cherries'];
+let numberOfGuesses = 5;
+
+while(numberOfGuesses) { //slow loop
+  numberOfGuesses--;
+  let userFruitGuess = prompt('Ok, this question has multiple correct answers. I want you to guess my favorite fruits.').toLowerCase();
+  let correct = false;
+  let fruit = null;
+  for (let i = 0; i < myFavFruit.length; i++){ //fast loop
+    if(userFruitGuess === myFavFruit[i]){
+      correct = true;
+      numberOfGuesses = 0;
+      fruit = myFavFruit[i];
+    }
+  }
+  if (correct){
+    alert(`Yum! I DO love ${fruit}!`);
+  } else {
+    alert('Sorry, nope');
   }
 }
-
-// while maxRetry < 4
-// for loop
-// if answer7[i] === userGuess7 -- then return Correct! 
-// else return Wrong!
-// // need to keep track of maxretry, so need to decrament maxretry. maxretry--
