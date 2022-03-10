@@ -17,10 +17,29 @@ h1 {
   font-weight: 900;
 }
 
+#backgroundFacts {
+  border: 15 solid blue;
+}
+
 p {
   margin-left: 200px;
   margin-right: 200px;
   margin-bottom: 10px;
   color:rgb(9, 54, 54);
   text-align: justify;
+}
+
+#topTen {
+  border: 20px solid blue;
+  margin-left: 300px;
+  margin-right: 300px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 18pt;
+}
+
+ul {
+  justify-items: left;
 }
