@@ -3,16 +3,16 @@ let userName;
 //let finalScore = 0;
 // check lecuture 5 code review for how to do this
 
-function nameQuestion(){
-  userName = prompt('Hey there. I know we\'ve met before, but remind me your name again?');
+function userNameQuestion(){
+  userName = prompt('Hey there. I think we\'ve met before, but remind me your name again?');
   alert(`Ah, yes, ${userName}. Ok, let's see how well you know me. I have some questions for you; you can answer them with yes or no.`);
 }
-questionOne();
+userNameQuestion();
 
 function questionOne(){
-  let answerOne = prompt('Do I have a cat-sized dog AND a dog-like cat?').toLowerCase();
+  let answerOne = prompt('Do I have a dog and a cat?').toLowerCase();
   if(answerOne === 'y' || answerOne === 'yes'){
-    alert('Yep! Blanche and Pat the Cat. Funniest people I know.');
+    alert('Yep! Blanche and Pat the Cat. They\'re the best.');
     //console.log(`${userName} is correct; I have a cat and a dog.`);
   } else {
     alert('I guess we haven\'t spent much time together, since I talk about them all the time.');
@@ -27,7 +27,7 @@ function questionTwo(){
     alert('Correct, they are camo. Cool comfy camo crocs.');
     //console.log(`${userName} is correct; I do have crocs.`);
   } else {
-    alert('Actually, I do.');
+    alert('Actually, I do. They\'re camo, which may be why you\'ve never noticed them.');
     //console.log(`${userName} is incorrect; I do have crocs.`);
   }
 }
@@ -39,7 +39,7 @@ function questionThree(){
     alert('Wow, way off. I\'m from Alabama.');
     //console.log(`${userName} is incorrect; I am not from Mississippi.`);
   } else {
-    alert('Duh! I\'m from Alabama, very different place.');
+    alert('Correct! I\'m from Alabama, very different place.');
     //console.log(`${userName} is correct; I am not from Mississippi.`);
   }
 }
@@ -51,7 +51,7 @@ function questionFour(){
     alert('Yikes, wrong. I\'ll have whatever.');
     //console.log(`${userName} is incorrect; I'm not a wine snob.`);
   } else {
-    alert('Correct! No-snob zone. But I have worked for a lot of winemakers.');
+    alert('Correct! No-snob zone.');
     //console.log(`${userName} is correct; I'm not a wine snob.`);
   }
 }
@@ -93,9 +93,9 @@ function questionSix(){
 let answerSix = 5;
 let maxRetry = 4;
   for (let i = 0; i <= maxRetry; i++){
-    let userGuessSix = prompt (`Ok, ${userName}, new question. How many states have I lived in? I'll give you 4 guesses.`);
+    let userGuessSix = prompt (`Ok, ${userName}, now you'll need to type in a number. How many states have I lived in? I'll give you 4 guesses.`);
     if (parseInt (userGuessSix) === answerSix){
-      alert(`That's right, ${userName}! I've lived in 5 states. Good job, you.`);
+      alert('Woohoo, you got it! I\'ve lived in lived 5 states: Alabama, Tennessee, Oregon, California, and Washington. Good job, you.');
       //console.log('user was correct');
       break;
     } else if(userGuessSix > answerSix){
@@ -113,11 +113,11 @@ let maxRetry = 4;
 questionSix();
 
 function questionSeven(){
-  let myFavFruit = ['mangoes', 'mango', 'pineapple', 'pineapples', 'blueberries', 'cherries'];
+  let myFavFruit = ['mangoes', 'mango', 'pineapple', 'pineapples', 'blueberries', 'cherries', 'apples'];
   let numberOfGuesses = 5;
   while(numberOfGuesses) { //slow loop
     numberOfGuesses--;
-    let userFruitGuess = prompt('Ok, this question has multiple correct answers. I want you to guess my favorite fruits.').toLowerCase();
+    let userFruitGuess = prompt('Now can you guess one of my top five favorite fruits?').toLowerCase();
     let correct = false;
     let fruit = null;
     for (let i = 0; i < myFavFruit.length; i++){ //fast loop
