@@ -1,18 +1,16 @@
 'use strict';
 let userName;
-//let finalScore = 0;
-// check lecuture 5 code review for how to do this
 
 function userNameQuestion(){
   userName = prompt('Hey there. I think we\'ve met before, but remind me your name again?');
-  alert(`Ah, yes, ${userName}. Ok, let's see how well you know me. I have some questions for you; you can answer them with yes or no.`);
+  alert(`Ah, yes, ${userName}. Let's see how well you know me. I have some yes-or-no questions for you. Ready?`);
 }
 userNameQuestion();
 
 function questionOne(){
-  let answerOne = prompt('Do I have a dog and a cat?').toLowerCase();
+  let answerOne = prompt('Do I have exactly one dog and one cat?').toLowerCase();
   if(answerOne === 'y' || answerOne === 'yes'){
-    alert('Yep! Blanche and Pat the Cat. They\'re the best.');
+    alert('Yep! Blanche and Pat the Cat. My best friends.');
     //console.log(`${userName} is correct; I have a cat and a dog.`);
   } else {
     alert('I guess we haven\'t spent much time together, since I talk about them all the time.');
@@ -69,58 +67,38 @@ function questionFive(){
 }
 questionFive();
 
-
-//QUESTION 6 LOOP -- keep in notes for now.
-
-// let answerSix = 5;
-// let attempts = 4;
-
-// while (attempts) {
-//   let userGuess = prompt(`Ok, ${userName}, next question. How many states have I lived in? I'll give you 4 guesses.`);
-//   if (userGuess > answerSix) {
-//     alert('Nope, not that many.');
-//   } else if (userGuess < answerSix) {
-//     alert('Nope, more than that.');
-//     break;
-//   }
-//   attempts--;
-//   if (attempts === 0) {
-//     alert(`Oof, not great at guessing, ${userName}. The answer is ${answerSix}.`);
-//   }
-// }
-
 function questionSix(){
-let answerSix = 5;
-let maxRetry = 4;
-  for (let i = 0; i <= maxRetry; i++){
-    let userGuessSix = prompt (`Ok, ${userName}, now you'll need to type in a number. How many states have I lived in? I'll give you 4 guesses.`);
+  let answerSix = 36;
+  let attempts = 3;
+  for (let i = 0; i <= attempts; i++){
+    let userGuessSix = prompt ('You know what I love? Oreos. Do you know how many oreos come in a pack?');
     if (parseInt (userGuessSix) === answerSix){
-      alert('Woohoo, you got it! I\'ve lived in lived 5 states: Alabama, Tennessee, Oregon, California, and Washington. Good job, you.');
-      //console.log('user was correct');
+      alert('Woohoo, you got it! I\'ll eat one in your honor.');
+      //console.log('user correctly guessed 36 oreos in a pack.');
       break;
     } else if(userGuessSix > answerSix){
-      alert(`Not that many! You have ${maxRetry - i} tries left.`);
+      alert(`Not that many! You have ${attempts - i} tries remaining.`);
       //console.log('user was incorrect.');
     } else if(userGuessSix < answerSix){
-      alert(`More than that! You have ${maxRetry - i} tries left.`);
-      //console.log('user was incorrect.');
+      alert(`More than that! You have ${attempts - i} tries remaining.`);
+      //console.log('user could not guess how many oreos were in a pack.');
     }
-    if(i === maxRetry){
-      alert(`Oof, sorry ${userName}, you're bad at guessing. The answer is 5.`);
+    if(i === attempts){
+      alert(`Oof, sorry ${userName}, no oreos for you. The answer is 36!`);
     }
   }
 }
 questionSix();
 
 function questionSeven(){
-  let myFavFruit = ['mangoes', 'mango', 'pineapple', 'pineapples', 'blueberries', 'cherries', 'apples'];
+  let myFavFruit = ['mangoes', 'mango', 'pineapple', 'pineapples', 'blueberries', 'cherries'];
   let numberOfGuesses = 5;
-  while(numberOfGuesses) { //slow loop
+  while(numberOfGuesses) {
     numberOfGuesses--;
-    let userFruitGuess = prompt('Now can you guess one of my top five favorite fruits?').toLowerCase();
+    let userFruitGuess = prompt('Now can you guess one of my favorite fruits?').toLowerCase();
     let correct = false;
     let fruit = null;
-    for (let i = 0; i < myFavFruit.length; i++){ //fast loop
+    for (let i = 0; i < myFavFruit.length; i++){
       if(userFruitGuess === myFavFruit[i]){
         correct = true;
         numberOfGuesses = 0;
@@ -128,12 +106,10 @@ function questionSeven(){
       }
     }
     if (correct){
-      alert(`Yum! I DO love ${fruit}!`);
+      alert(`Yum. I DO love ${fruit}!`);
     } else {
-      alert('Sorry, nope');
+      alert(`Hmm, I'm not the biggest fan. Try again.`);
     }
   }
 }
 questionSeven();
-
-//alert(`Your final score is '${finalScore} out of 7.`);
